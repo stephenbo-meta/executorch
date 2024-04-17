@@ -438,6 +438,6 @@ class QuantizedGroupEmbedding(torch.nn.Module):
                 self.weight, self.scales, None, 0, 0, indices, dtype=self.dtype
             )
         else:  # 4bit packed
-            return torch.ops.llama_quantized.embedding_4bit.dtype(
+            return torch.ops.quantized_decomposed.embedding_4bit.dtype(
                 self.weight, self.scales, None, 0, 0, indices, dtype=self.dtype
             )
